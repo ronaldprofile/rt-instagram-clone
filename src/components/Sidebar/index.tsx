@@ -5,7 +5,8 @@ import {
   Heart,
   Plus,
   Compass,
-  VideoCamera
+  VideoCamera,
+  InstagramLogo
 } from "phosphor-react";
 import { Tab } from "./Tab";
 import * as S from "./styles";
@@ -15,8 +16,11 @@ export function Sidebar() {
     <S.SidebarContainer>
       <S.SidebarWrapper>
         <S.SidebarContent>
-          <S.Logo role="link">
-            <img src="/instagram.svg" alt="" />
+          <S.Logo>
+            <a href="/">
+              <img src="/instagram.svg" alt="" />
+              <InstagramLogo size={30} />
+            </a>
           </S.Logo>
 
           <nav>

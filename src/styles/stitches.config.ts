@@ -23,6 +23,10 @@ export const {
 
     fonts: {
       roboto: "'Roboto', sans-serif"
+    },
+
+    media: {
+      bp3: "(min-width: 1264px)"
     }
   }
 });
