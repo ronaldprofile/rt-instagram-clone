@@ -1,22 +1,31 @@
 import { styled } from "../../../styles/stitches.config";
 
 export const TabContainer = styled("div", {
-  margin: "0.5rem 0"
-});
+  margin: "0.5rem 0",
+  borderRadius: "9999px",
+  transition: "background .3s",
 
-export const TabWrapper = styled("div", {
-  width: "100%"
+  "&:hover": {
+    background: "#efefef"
+  }
 });
 
 export const TabContent = styled("div", {
+  height: "3rem",
+
   a: {
-    width: "100%",
+    display: "block",
+    maxHeight: "100%",
+    color: "$gray600"
+  },
+
+  ".tab__link-content": {
+    maxHeight: "100%",
     padding: "0.75rem",
-    display: "flex",
-    alignItems: "center",
-    color: "$gray600",
 
     svg: {
+      height: "24px",
+      width: "24px",
       transition: "transform .2s"
     },
 
@@ -27,19 +36,32 @@ export const TabContent = styled("div", {
     }
   },
 
-  span: {
+  ".tab__link-name": {
     display: "inline-block",
-    marginLeft: "1rem",
-
-    "&.active": {
-      fontWeight: 600
-    }
+    opacity: 0,
+    visibility: "hidden",
+    height: 0
   },
 
-  borderRadius: "9999px",
-  transition: "background .3s",
+  "@media (min-width: 1264px)": {
+    height: "auto",
 
-  "&:hover": {
-    background: "#efefef"
+    ".tab__link-content": {
+      display: "flex",
+      alignItems: "center"
+    },
+
+    ".tab__link-name": {
+      opacity: 1,
+      visibility: "visible",
+      height: "auto",
+
+      display: "inline-block",
+      marginLeft: "1rem",
+
+      "&.active": {
+        fontWeight: 600
+      }
+    }
   }
 });

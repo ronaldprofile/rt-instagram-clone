@@ -19,7 +19,7 @@ export function Sidebar() {
           <S.Logo>
             <a href="/">
               <img src="/instagram.svg" alt="" />
-              <InstagramLogo size={30} />
+              <InstagramLogo size={24} />
             </a>
           </S.Logo>
 
@@ -31,8 +31,8 @@ export function Sidebar() {
             <Tab path="#" name={"Reels"} icon={VideoCamera} />
 
             <Tab path="/direct/inbox" name={"Mensagens"} icon={Chats} />
-            <Tab path="" name={"Notificações"} icon={Heart} />
-            <Tab path="" name={"Criar"} icon={Plus} />
+            <Tab path="#" name={"Notificações"} icon={Heart} />
+            <Tab path="#" name={"Criar"} icon={Plus} />
           </nav>
         </S.SidebarContent>
       </S.SidebarWrapper>

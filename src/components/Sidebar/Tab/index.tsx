@@ -1,5 +1,5 @@
 import { IconProps } from "phosphor-react";
-
+import { Link } from "react-router-dom";
 import * as S from "./styles";
 
 interface TabProps {
@@ -9,16 +9,18 @@ interface TabProps {
 }
 
 export function Tab({ name, path, icon: Icon }: TabProps) {
+  console.log(path);
+
   return (
     <S.TabContainer>
-      <S.TabWrapper>
-        <S.TabContent>
-          <a href={path}>
+      <S.TabContent>
+        <Link to={`${path}`}>
+          <div className="tab__link-content">
             {Icon && <Icon size={30} />}
-            <span>{name}</span>
-          </a>
-        </S.TabContent>
-      </S.TabWrapper>
+            <span className="tab__link-name">{name}</span>
+          </div>
+        </Link>
+      </S.TabContent>
     </S.TabContainer>
   );
 }
