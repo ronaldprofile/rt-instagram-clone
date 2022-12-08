@@ -6,7 +6,12 @@ export const TabContainer = styled("div", {
   transition: "background .3s",
 
   "&:hover": {
-    background: "#efefef"
+    background: "#efefef",
+
+    ".tooltip-tab__content": {
+      opacity: 1,
+      visibility: "visible"
+    }
   }
 });
 

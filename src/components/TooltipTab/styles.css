@@ -1,0 +1,82 @@
+.tooltip-tab__content {
+  min-width: max-content;
+  position: absolute;
+
+  opacity: 0;
+  visibility: hidden;
+
+  /* background-color: red; */
+}
+
+.tooltip-tab__content[data-state="delayed-open"][data-side="top"] {
+  animation-name: slideDownAndFade;
+}
+.tooltip-tab__content[data-state="delayed-open"][data-side="right"] {
+  animation-name: slideLeftAndFade;
+}
+.tooltip-tab__content[data-state="delayed-open"][data-side="bottom"] {
+  animation-name: slideUpAndFade;
+}
+.tooltip-tab__content[data-state="delayed-open"][data-side="left"] {
+  animation-name: slideRightAndFade;
+}
+
+.tooltip-tab__content > span {
+  position: absolute;
+  top: 0 !important;
+  transform: rotate(90deg) !important;
+  left: -22px !important;
+}
+
+@media (min-width: 1264px) {
+  .tooltip-tab__content {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+  }
+}
+
+@keyframes slideUpAndFade {
+  from {
+    opacity: 0;
+    transform: translateY(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideRightAndFade {
+  from {
+    opacity: 0;
+    transform: translateX(-2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideDownAndFade {
+  from {
+    opacity: 0;
+    transform: translateY(-2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideLeftAndFade {
+  from {
+    opacity: 0;
+    transform: translateX(2px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
